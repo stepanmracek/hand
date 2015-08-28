@@ -1,0 +1,22 @@
+{
+  "name": "hand",
+  "version": "0.0.0",
+  "description": "",
+  "main": "hand.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/stepanmracek/hand.git"
+  },
+  "author": "",
+  "license": "BSD",
+  "bugs": {
+    "url": "https://github.com/stepanmracek/hand/issues"
+  },
+  "devDependencies": {
+    "gulp-sass": "~2.0.4",
+    "gulp": "~3.9.0"
+  }
+}

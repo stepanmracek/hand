@@ -1,0 +1,27 @@
+$chameleon: #8ae234;
+$skyblue: #729fcf;
+$aluminium: #eeeeec;
+
+@mixin animated-fill($color) {
+    transition-property: fill, fill-opacity;
+    transition-duration: 0.2s;
+    transition-timing-function: linear;
+    fill: $color;
+    fill-opacity: 1;
+
+    &.mouse-over {
+        fill: lighten(saturate($color, 10%), 10%);
+    }
+}
+
+.finger-not-selected {
+    @include animated-fill($aluminium);
+}
+
+.finger-selected {
+    @include animated-fill($chameleon);
+}
+
+.finger-has-bio {
+    @include animated-fill($skyblue);
+}

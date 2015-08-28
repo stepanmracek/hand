@@ -18,12 +18,21 @@ document.addEventListener("DOMContentLoaded", function(event) {
             finger.classList.add(notSelected);
         }
 
+        var getFingerNumber = function(clickarea) {
+            var id = clickarea.id;
+            return parseInt(id.substring('clickarea'.length));
+        };
+
+        var getFingerElement = function(clickarea) {
+            var fingerNumber = getFingerNumber(clickarea);
+            var fingerId = 'finger' + fingerNumber;
+            return document.getElementById(fingerId);
+        }
+
         var clickarea = document.getElementById('clickarea' + i);
         clickarea.onclick = function(mouseEvent) {
-            var id = mouseEvent.srcElement.id;
-            var fingerNumber = parseInt(id.substring('clickarea'.length));
-            var fingerId = 'finger' + fingerNumber;
-            var fingerElement = document.getElementById(fingerId);
+            var fingerNumber = getFingerNumber(mouseEvent.srcElement);
+            var fingerElement = getFingerElement(mouseEvent.srcElement);
 
             selectedFinger = fingerNumber;
             fingerElements.forEach(function(f) {
@@ -44,6 +53,16 @@ document.addEventListener("DOMContentLoaded", function(event) {
                     }
                 }
             });
-        }
+        };
+
+        clickarea.onmouseover = function(mouseEvent) {
+            var fingerElement = getFingerElement(mouseEvent.srcElement);
+            fingerElement.classList.add('mouse-over');
+        };
+
+        clickarea.onmouseout = function(mouseEvent) {
+            var fingerElement = getFingerElement(mouseEvent.srcElement);
+            fingerElement.classList.remove('mouse-over');
+        };
     }
 });
