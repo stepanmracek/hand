@@ -1,0 +1,39 @@
+$chameleon: #8ae234;
+$skyblue: #729fcf;
+$aluminium: #eeeeec;
+
+@mixin animated-fill {
+    transition-property: fill;
+    transition-duration: 0.2s;
+    transition-timing-function: linear;
+}
+
+@mixin selected {
+    @include animated-fill;
+    fill: $chameleon;
+    fill-opacity: 1;
+}
+
+@mixin has-biometrics {
+    @include animated-fill;
+    fill: $skyblue;
+    fill-opacity: 1;
+}
+
+@mixin not-selected {
+    @include animated-fill;
+    fill: $aluminium;
+    fill-opacity: 1;
+}
+
+circle.finger-not-selected {
+    @include not-selected;
+}
+
+circle.finger-selected {
+    @include selected;
+}
+
+circle.finger-has-bio {
+    @include has-biometrics;
+}

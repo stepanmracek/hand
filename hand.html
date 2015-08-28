@@ -2,74 +2,8 @@
 
 <head>
     <title></title>
-    <script type="text/javascript">
-    document.addEventListener("DOMContentLoaded", function(event) {
-
-        var fingers = [];
-
-        for (var i = 1; i <= 10; i++) {
-            var finger = document.getElementById('finger' + i);
-            fingers.push(finger);
-
-            var clickarea = document.getElementById('clickarea' + i);
-            clickarea.onclick = function(mouseEvent) {
-                var id = mouseEvent.srcElement.id;
-                var fingerId = 'finger' + id.substring('clickarea'.length);
-                var fingerElement = document.getElementById(fingerId);
-
-                fingers.forEach(function(f) {
-                    var selected = 'finger-selected';
-                    var notSelected = 'finger-not-selected';
-                    if (f === fingerElement) {
-                        f.classList.remove(notSelected);
-                        f.classList.add(selected);
-                    } else {
-                        f.classList.remove(selected);
-                        f.classList.add(notSelected);
-                    }
-                });
-            }
-        }
-    });
-    </script>
-    <style type="text/css">
-
-    @keyframes toSelected {
-        from {
-            fill: white;
-            fill-opacity: 0;
-        }
-        to {
-            fill: #73F35D;
-            fill-opacity: 1;
-        }
-    }
-
-    @keyframes toNotSelected {
-        from {
-            fill: #73F35D;
-            fill-opacity: 1;
-        }
-        to {
-            fill: white;
-            fill-opacity: 0;
-        }
-    }
-
-    circle.finger-not-selected {
-        fill: white;
-        fill-opacity: 0;
-        animation-name: toNotSelected;
-        animation-duration: 0.3s;
-    }
-    
-    circle.finger-selected {
-        fill: #73F35D;
-        fill-opacity: 1;
-        animation-name: toSelected;
-        animation-duration: 0.3s;
-    }
-    </style>
+    <script type="text/javascript" src="hand.js"></script>
+    <link rel="stylesheet" href="hand.css">
 </head>
 
 <body>
@@ -78,16 +12,16 @@
         <svg xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 562.5 562.5" width="100%" xml:space="preserve" version="1.1" id="hand-svg">
             <g transform="matrix(1.25,0,0,-1.25,0,562.5)" id="g4170">
                 <g transform="scale(0.1,0.1)" id="g4172">
-                    <circle class="finger-not-selected" cx="2488.3474" cy="-2307.2031" r="152.54237" transform="scale(1,-1)" id="finger1" />
-                    <circle class="finger-not-selected" transform="scale(1,-1)" cx="3031.7795" cy="-3141.4197" r="152.54237" id="finger2" />
-                    <circle class="finger-not-selected" transform="scale(1,-1)" cx="3346.3982" cy="-3346.3982" r="152.54237" id="finger3" />
-                    <circle class="finger-not-selected" transform="scale(1,-1)" cx="3651.4829" cy="-3246.2925" r="152.54237" id="finger4" />
-                    <circle class="finger-not-selected" transform="scale(1,-1)" cx="3947.0337" cy="-2984.1101" r="152.54237" id="finger5" />
-                    <circle class="finger-not-selected" transform="scale(-1,-1)" cx="-2006.8853" cy="-2302.4365" r="152.54237" id="finger6" />
-                    <circle class="finger-not-selected" transform="scale(-1,-1)" cx="-1463.4531" cy="-3136.6528" r="152.54237" id="finger7" />
-                    <circle class="finger-not-selected" transform="scale(-1,-1)" cx="-1148.8345" cy="-3341.6313" r="152.54237" id="finger8" />
-                    <circle class="finger-not-selected" transform="scale(-1,-1)" cx="-843.75" cy="-3241.5259" r="152.54237" id="finger9" />
-                    <circle class="finger-not-selected" transform="scale(-1,-1)" cx="-548.19922" cy="-2979.3433" r="152.54237" id="finger10" />
+                    <circle cx="2488.3474" cy="-2307.2031" r="152.54237" transform="scale(1,-1)" id="finger1" />
+                    <circle transform="scale(1,-1)" cx="3031.7795" cy="-3141.4197" r="152.54237" id="finger2" />
+                    <circle transform="scale(1,-1)" cx="3346.3982" cy="-3346.3982" r="152.54237" id="finger3" />
+                    <circle transform="scale(1,-1)" cx="3651.4829" cy="-3246.2925" r="152.54237" id="finger4" />
+                    <circle transform="scale(1,-1)" cx="3947.0337" cy="-2984.1101" r="152.54237" id="finger5" />
+                    <circle transform="scale(-1,-1)" cx="-2006.8853" cy="-2302.4365" r="152.54237" id="finger6" />
+                    <circle transform="scale(-1,-1)" cx="-1463.4531" cy="-3136.6528" r="152.54237" id="finger7" />
+                    <circle transform="scale(-1,-1)" cx="-1148.8345" cy="-3341.6313" r="152.54237" id="finger8" />
+                    <circle transform="scale(-1,-1)" cx="-843.75" cy="-3241.5259" r="152.54237" id="finger9" />
+                    <circle transform="scale(-1,-1)" cx="-548.19922" cy="-2979.3433" r="152.54237" id="finger10" />
                     <path id="clickarea1" d="m 2574.1526,2402.5424 300.3177,-362.2882 -243.1144,-324.1525 -271.7161,557.733 0,128.7077 119.1738,47.6694 z" style="fill:red; fill-opacity:0;  stroke:none;" />
                     <path id="clickarea2" d="m 3170.0212,2459.7458 9.5339,724.5762 -109.6398,100.106 -114.4068,-23.8348 -71.5043,-119.1737 0,-1086.8644 z" style="fill:red; fill-opacity:0;  stroke:none;" />
                     <path id="clickarea3" d="m 3465.572,2483.5805 23.8348,858.0509 -61.9703,133.4745 -90.5721,9.5339 -104.8729,-57.2033 -28.6017,-138.2416 -23.8347,-834.2161 z" style="fill:red; fill-opacity:0;  stroke:none;" />
